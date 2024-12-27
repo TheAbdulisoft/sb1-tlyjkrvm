@@ -1,0 +1,135 @@
+/* Modern Matrix Theme with Mobile Optimizations */
+:root {
+  --neon-green: #00ff41;
+  --dark-green: #003B00;
+  --matrix-black: #0D0208;
+}
+
+@keyframes subtle-glow {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+.matrix-background {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--matrix-black) 0%, #000000 100%);
+}
+
+.matrix-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive Typography */
+h1 {
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  background: linear-gradient(to right, #00ff41 0%, #4dff88 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: subtle-glow 3s infinite;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+p {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+/* Glass Effect Cards */
+.glass-card {
+  background: rgba(13, 2, 8, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 65, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 255, 65, 0.1);
+}
+
+/* Enhanced Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Modern Button Styles */
+.modern-button {
+  background: linear-gradient(45deg, var(--dark-green), var(--neon-green));
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+.modern-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.modern-button:hover::before {
+  left: 100%;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 255, 65, 0.05);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 65, 0.2);
+  border-radius: 2px;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .glass-card {
+    padding: 1rem;
+  }
+
+  .modern-button {
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Grid Layout */
+.modern-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
